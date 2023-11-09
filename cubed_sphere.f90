@@ -43,7 +43,7 @@ program main
     write ( *, '(a)' ) ''
     write ( *, '(a)' ) 'SPHERE_CUBED_GRID_LINES_DISPLAY_TEST'
     write ( *, '(a)' ) '  SPHERE_CUBED_GRID_LINES_DISPLAY displays the lines'
-    write ( *, '(a)' ) '  on a cubed sphere grid.'
+    write ( *, '(a,f6.2)' ) '  on a cubed sphere grid of radius ', radius
     write ( *, '(a,i2,a,i2,a)' ) '  Each cube face is divided into ', n, ' by ', n, ' subfaces'
   
     call sphere_cubed_grid_line_count ( n, line_num )
