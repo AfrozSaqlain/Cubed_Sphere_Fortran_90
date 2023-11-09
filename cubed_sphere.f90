@@ -5,8 +5,22 @@ program main
     integer ( kind = 4 ) p
     real ( kind = 8 ) radius
 
-    do p = 1, 5
-      radius = 1.0D+00 * p
+    integer :: io, stat
+    logical :: exists
+
+    ! Check if the file exists
+    inquire(file="sphere_cubed_grid_points.csv", exist=exists)
+
+    ! If the file exists, open and delete it
+    if (exists) then
+        open(file="sphere_cubed_grid_points.csv", newunit=io, iostat=stat)
+        if (stat == 0) then
+            close(io, status="delete", iostat=stat)
+        end if
+    end if
+
+    do p = 1, 10
+      radius = (1.0D+00 * p)/10
       call sphere_cubed_grid_lines_display_test ( radius )
     end do
 
