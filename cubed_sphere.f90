@@ -493,40 +493,6 @@ program main
     return
   end
 
-  ! subroutine sphere_cubed_grid_lines_display ( line_num, line_data, prefix )
-
-  !     implicit none
-
-  !     integer(kind=4) :: line_num
-    
-  !     integer(kind=4) :: i
-  !     integer(kind=4) :: l
-  !     real(kind=8) :: line_data(3, 2, line_num)
-  !     character(len=255) :: line_filename
-  !     integer(kind=4) :: line_unit
-  !     character(len=*) :: prefix
-    
-  !     call get_unit(line_unit)
-  !     line_filename = trim(prefix) // '_points.csv' ! Change file extension to .csv
-  !     open(unit=line_unit, file=line_filename, status='replace')
-  !     do l = 1, line_num
-  !       do i = 1, 3
-  !         ! Check if it's the last entry in the row
-  !         if (i == 3) then
-  !           ! Last entry, no comma
-  !           write(line_unit, '(f14.6)', advance='no') line_data(i, 1, l)
-  !         else
-  !           ! Not the last entry, add a comma
-  !           write(line_unit, '(f14.6, ",")', advance='no') line_data(i, 1, l)
-  !         end if
-  !       end do
-  !       write(line_unit, *)
-  !     end do
-  !     close(unit=line_unit)
-  !     write(*, '(a)') '  Created line file "' // trim(line_filename) // '".'
-
-  !     end
-
   subroutine sphere_cubed_grid_lines_display ( line_num, line_data, prefix )
 
     implicit none
